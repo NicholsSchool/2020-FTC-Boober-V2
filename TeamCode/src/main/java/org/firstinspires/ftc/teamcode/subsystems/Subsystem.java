@@ -1,5 +1,5 @@
 package org.firstinspires.ftc.teamcode.subsystems;
-import org.firstinspires.ftc.teamcode.util.Robot;
+import org.firstinspires.ftc.teamcode.util.RobotBase;
 
 public abstract class Subsystem {
 
@@ -12,7 +12,7 @@ public abstract class Subsystem {
     public Subsystem(String name)
     {
         this.name = name;
-        Robot.registerSubsystem(this);
+        RobotBase.registerSubsystem(this);
     }
 
     /**

@@ -7,12 +7,13 @@ import org.firstinspires.ftc.teamcode.util.Robot;
 
 @TeleOp(name="Ok Boober Teleop", group="Iterative Opmode")
 public class Teleop extends OpMode {
+    private Robot robot;
     /**
      * Intializes the objects within the Robot class
      */
     @Override
     public void init() {
-        Robot.init(hardwareMap, telemetry, gamepad1, gamepad2);
+       robot = new Robot(hardwareMap, telemetry, gamepad1, gamepad2);
     }
 
     /**
@@ -20,7 +21,7 @@ public class Teleop extends OpMode {
      */
     @Override
     public void loop() {
-        Robot.run();
+        robot.run();
     }
 
     /**
@@ -28,6 +29,6 @@ public class Teleop extends OpMode {
      */
     @Override
     public void stop() {
-        Robot.stop();
+        robot.stop();
     }
 }
