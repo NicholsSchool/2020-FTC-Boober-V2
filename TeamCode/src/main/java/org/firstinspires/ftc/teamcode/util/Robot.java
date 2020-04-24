@@ -22,7 +22,6 @@ import java.util.HashMap;
  */
 public class Robot extends RobotBase {
 
-    public static LinearOpMode opMode;
 
     public Gripper gripper;
     public DriveTrain driveTrain;
