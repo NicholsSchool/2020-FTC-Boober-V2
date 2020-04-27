@@ -1,8 +1,11 @@
 package org.firstinspires.ftc.teamcode.util;
 
+import android.os.Environment;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.subsystems.Subsystem;
@@ -18,6 +21,8 @@ public abstract class RobotBase {
     public static Gamepad g1, g2;
     public static HardwareMap hw;
     public static LinearOpMode opMode;
+    public static ElapsedTime timer;
+    public static String filePath, replayFileName;
 
     public RobotBase(HardwareMap hardwareMap, Telemetry t, Gamepad gamepad1, Gamepad gamepad2)
     {
@@ -31,6 +36,9 @@ public abstract class RobotBase {
         g1 = gamepad1;
         g2 = gamepad2;
         this.opMode = opMode;
+        timer = new ElapsedTime();
+        filePath = Environment.getExternalStorageDirectory().getPath();
+        replayFileName = "ReplayFile";
         initSubsystems();
     }
 
