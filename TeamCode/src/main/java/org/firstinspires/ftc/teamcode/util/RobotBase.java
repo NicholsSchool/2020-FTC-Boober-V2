@@ -56,6 +56,11 @@ public abstract class RobotBase {
         subsystems.put(s.getName(), s);
     }
 
+    public static HashMap<String, Subsystem> getSubsystems()
+    {
+        return subsystems;
+    }
+
     public void run()
     {
         for(Subsystem s : subsystems.values())
