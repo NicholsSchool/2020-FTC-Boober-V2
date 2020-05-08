@@ -14,6 +14,8 @@ import java.io.IOException;
 public class Record extends OpMode {
     private RobotRecorder recorder;
     private Robot robot;
+
+    private final int sleepTime = 35; // in milliseconds
     private boolean isRecording;
 
     /**
@@ -61,7 +63,7 @@ public class Record extends OpMode {
         {
             try {
                 recorder.record();
-                sleep(35); //This is needed so that the RecordReader can stay in tune with the recordings
+                sleep(sleepTime); //This is needed so that the RecordReader can stay in tune with the recordings
             } catch (IOException e) {
                 telemetry.addData("Recording IO error", e);
 

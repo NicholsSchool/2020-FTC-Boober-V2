@@ -47,19 +47,26 @@ public class RecordReader {
         if(!startedReading)
             initReading();
 
+        // Make sure there is still stuff to read
         if (reader.hasNext()) {
             if (inTuneWithData)
                 nextDataTime = reader.nextLong();
 
             long currentTime = System.currentTimeMillis() - start;
             long diffInTime = nextDataTime - currentTime;
+
+            // This stuff is for driver to see if its working properly
             avgDiffInTime += diffInTime;
             count ++;
             Robot.telemetry.addData("Average Diff in Time", avgDiffInTime/count);
             Robot.telemetry.addData("Diff In Time", diffInTime );
+
+            // Only read next values if we are caught up to the correct timestamp
             if (diffInTime <= 0) {
                 Robot.telemetry.addData("Time", nextDataTime );
                 Robot.telemetry.addData(" Current Time" , currentTime);
+
+                // Reads each value up to the next timestamp
                 while (reader.hasNext() && !reader.hasNextLong()) {
                     String[] values = reader.next().split("\\|");
                     String subsystemName = values[0];

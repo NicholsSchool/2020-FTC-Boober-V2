@@ -32,12 +32,13 @@ public class RobotRecorder {
         if(!startedWriting)
             initWriting();
 
-        writer.append("" + (System.currentTimeMillis() - start));
+        writer.append("" + (System.currentTimeMillis() - start));  // Write time
 
         //Code for recording everything
         for (String s : Robot.getSubsystems().keySet()) {
             if(!(Robot.getSubsystems().get(s) instanceof  Recordable))
                 continue;
+            // Only records subsystems which implement Recordable
             writer.append("," + s + "|");
             for (double d : ((Recordable) Robot.getSubsystems().get(s)).getValues())
                 writer.append(d + "|");
