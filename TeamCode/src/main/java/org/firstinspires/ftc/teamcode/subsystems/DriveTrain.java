@@ -9,8 +9,8 @@ import org.firstinspires.ftc.teamcode.util.RobotMap;
 
 public class DriveTrain extends Subsystem {
 
-    public static DcMotorEx lfDrive, lmDrive,lbDrive, rfDrive, rmDrive, rbDrive;
-    public static DcMotorEx[] motors;
+    private DcMotorEx lfDrive, lmDrive,lbDrive, rfDrive, rmDrive, rbDrive;
+    private DcMotorEx[] motors;
     private boolean isArcadeDrive;
     public DriveTrain()
     {

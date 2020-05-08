@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.util;
 
+import android.os.Environment;
+
 public class RobotMap {
 
     public static final String LEFT_INTAKE_ID = "LeftIntake";
@@ -10,5 +12,7 @@ public class RobotMap {
                                 LEFT_BACK_DRIVE_ID = "LeftBackDrive",
                                 RIGHT_FRONT_DRIVE_ID = "RightFrontDrive",
                                 RIGHT_MIDDLE_DRIVE_ID  = "RightMiddleDrive",
-                                RIGHT_BACK_DRIVE_ID = "RightBackDrive";        ;
+                                RIGHT_BACK_DRIVE_ID = "RightBackDrive";
+
+    public static final String filePath = Environment.getExternalStorageDirectory().getPath();
 }

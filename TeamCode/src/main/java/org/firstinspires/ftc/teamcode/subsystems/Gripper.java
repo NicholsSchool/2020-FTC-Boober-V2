@@ -5,8 +5,9 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.firstinspires.ftc.teamcode.util.Robot;
 import org.firstinspires.ftc.teamcode.util.RobotMap;
+import org.firstinspires.ftc.teamcode.util.record.Recordable;
 
-public class Gripper extends Subsystem {
+public class Gripper extends Subsystem implements Recordable {
 
     private DcMotorEx lGripper, rGripper;
 
@@ -49,5 +50,16 @@ public class Gripper extends Subsystem {
     @Override
     public void stop() {
         move(0);
+    }
+
+    @Override
+    public double[] getValues() {
+        return new double[]{lGripper.getPower(), rGripper.getPower()};
+    }
+
+    @Override
+    public void setValues(double[] vals) {
+        lGripper.setPower(vals[0]);
+        rGripper.setPower(vals[1]);
     }
 }
