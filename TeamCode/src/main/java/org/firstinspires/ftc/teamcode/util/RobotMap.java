@@ -14,5 +14,10 @@ public class RobotMap {
                                 RIGHT_MIDDLE_DRIVE_ID  = "RightMiddleDrive",
                                 RIGHT_BACK_DRIVE_ID = "RightBackDrive";
 
+    public static final String LIGHTS_ID = "Lights";
+    public static final String CAPSTONE_SERVO_ID = "CapstoneServo";
+    public static final String ARM_SERVO_ID = "ArmServo";
+    public static final String TAPE_SERVO_ID = "TapeServo";
     public static final String filePath = Environment.getExternalStorageDirectory().getPath();
+
 }

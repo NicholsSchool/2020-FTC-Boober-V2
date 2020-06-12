@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.teamcode.util.Constants;
 import org.firstinspires.ftc.teamcode.util.Robot;
+import org.firstinspires.ftc.teamcode.util.RobotMap;
 
 public class CapstoneDropper extends Subsystem {
 
@@ -11,7 +12,7 @@ public class CapstoneDropper extends Subsystem {
     public CapstoneDropper()
     {
         super("CapstoneDropper");
-        capstoneServo = Robot.hw.get(Servo.class, "CapstoneServo");
+        capstoneServo = Robot.hw.get(Servo.class, RobotMap.CAPSTONE_SERVO_ID);
     }
 
     public void drop()

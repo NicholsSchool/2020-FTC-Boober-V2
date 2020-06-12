@@ -91,6 +91,10 @@ public class DriveTrain extends Subsystem {
             isArcadeDrive = true;
     }
 
+    public void test() {
+        lbDrive.setPower(0.2);
+    }
+
     @Override
     public void stop() {
         move(0,0);

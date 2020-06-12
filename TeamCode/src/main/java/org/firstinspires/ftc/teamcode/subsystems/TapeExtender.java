@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.CRServo;
 
 import org.firstinspires.ftc.teamcode.util.Constants;
 import org.firstinspires.ftc.teamcode.util.Robot;
+import org.firstinspires.ftc.teamcode.util.RobotMap;
 
 public class TapeExtender extends Subsystem {
 
@@ -11,7 +12,7 @@ public class TapeExtender extends Subsystem {
     public TapeExtender()
     {
         super("TapeExtender");
-        extender = Robot.hw.get(CRServo.class, "TapeServo");
+        extender = Robot.hw.get(CRServo.class, RobotMap.TAPE_SERVO_ID);
     }
 
     public void extend()

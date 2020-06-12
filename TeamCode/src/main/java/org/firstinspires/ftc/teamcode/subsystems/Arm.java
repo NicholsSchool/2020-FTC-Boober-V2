@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.teamcode.util.Robot;
 import org.firstinspires.ftc.teamcode.util.Constants;
+import org.firstinspires.ftc.teamcode.util.RobotMap;
 
 public class Arm extends Subsystem {
 
@@ -11,7 +12,7 @@ public class Arm extends Subsystem {
     public Arm()
     {
         super("Arm");
-        armServo = Robot.hw.get(Servo.class, "ArmServo");
+        armServo = Robot.hw.get(Servo.class, RobotMap.ARM_SERVO_ID);
     }
 
     public void moveUp()

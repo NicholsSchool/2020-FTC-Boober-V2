@@ -3,13 +3,14 @@ package org.firstinspires.ftc.teamcode.subsystems;
 import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
 
 import org.firstinspires.ftc.teamcode.util.Robot;
+import org.firstinspires.ftc.teamcode.util.RobotMap;
 
 public class Lights extends Subsystem {
 
     private RevBlinkinLedDriver lights;
     public Lights()
     {
-        super("Lights");
+        super(RobotMap.LIGHTS_ID);
         lights = Robot.hw.get(RevBlinkinLedDriver.class, "Lights");
     }
 
