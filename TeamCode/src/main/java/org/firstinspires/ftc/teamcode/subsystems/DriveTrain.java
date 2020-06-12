@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.subsystems;
 
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.Range;
@@ -39,6 +40,12 @@ public class DriveTrain extends Subsystem {
         motors[5] = rbDrive;
 
         isArcadeDrive = false;
+    }
+
+    public void setBrakeMode(boolean brakeModeOn)
+    {
+        for(DcMotorEx motor : motors)
+            motor.setZeroPowerBehavior(brakeModeOn ? DcMotor.ZeroPowerBehavior.BRAKE : DcMotor.ZeroPowerBehavior.FLOAT);
     }
 
     public void move(double lSpeed, double rSpeed)
@@ -92,7 +99,7 @@ public class DriveTrain extends Subsystem {
     }
 
     public void test() {
-        lbDrive.setPower(0.2);
+        rmDrive.setPower(0.2);
     }
 
     @Override

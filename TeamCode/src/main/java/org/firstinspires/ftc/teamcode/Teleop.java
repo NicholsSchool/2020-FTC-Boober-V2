@@ -14,6 +14,7 @@ public class Teleop extends OpMode {
     @Override
     public void init() {
        robot = new Robot(hardwareMap, telemetry, gamepad1, gamepad2);
+       robot.driveTrain.setBrakeMode(false);
     }
 
     /**
