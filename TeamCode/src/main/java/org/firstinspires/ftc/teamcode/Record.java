@@ -9,7 +9,7 @@ import org.firstinspires.ftc.teamcode.util.record.RobotRecorder;
 
 import java.io.IOException;
 
-@Disabled
+
 @TeleOp(name="Teleop Record Test", group="Recording Tests")
 public class Record extends OpMode {
     private RobotRecorder recorder;

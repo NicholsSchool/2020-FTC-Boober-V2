@@ -32,9 +32,9 @@ public class CapstoneDropper extends Subsystem {
 
     @Override
     public void run() {
-        if(Robot.g2.dpad_down)
+        if(Robot.g1.dpad_down)
             drop();
-        else if(Robot.g2.dpad_up)
+        else if(Robot.g1.dpad_up)
             rest();
     }
 

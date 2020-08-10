@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.acmerobotics.dashboard.FtcDashboard;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -13,7 +14,7 @@ public class Teleop extends OpMode {
      */
     @Override
     public void init() {
-       robot = new Robot(hardwareMap, telemetry, gamepad1, gamepad2);
+       robot = new Robot(hardwareMap, FtcDashboard.getInstance().getTelemetry(), gamepad1, gamepad2);
        robot.driveTrain.setBrakeMode(false);
     }
 
@@ -23,6 +24,7 @@ public class Teleop extends OpMode {
     @Override
     public void loop() {
         robot.run();
+        Robot.telemetry.update();
     }
 
     /**

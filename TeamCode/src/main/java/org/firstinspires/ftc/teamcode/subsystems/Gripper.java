@@ -39,9 +39,9 @@ public class Gripper extends Subsystem {
 
     @Override
     public void run() {
-        if(Robot.g2.right_trigger > 0.5)
+        if(Robot.g1.right_trigger > 0.5)
             intake();
-        else if(Robot.g2.left_trigger > 0.5)
+        else if(Robot.g1.left_trigger > 0.5)
             outtake();
         else
             stop();

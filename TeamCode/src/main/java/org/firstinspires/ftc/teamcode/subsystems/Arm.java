@@ -32,9 +32,9 @@ public class Arm extends Subsystem {
 
     @Override
     public void run() {
-        if(Robot.g2.y)
+        if(Robot.g1.y)
             moveUp();
-        else if(Robot.g2.a)
+        else if(Robot.g1.a)
             moveDown();
     }
 

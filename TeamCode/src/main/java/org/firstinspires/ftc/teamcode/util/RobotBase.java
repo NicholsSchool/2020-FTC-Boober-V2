@@ -14,7 +14,6 @@ import java.util.HashMap;
 
 public abstract class RobotBase {
 
-    private static RobotBase instance;
     private static HashMap<String, Subsystem> subsystems;
 
     public static Telemetry telemetry;
@@ -38,7 +37,7 @@ public abstract class RobotBase {
         this.opMode = opMode;
         timer = new ElapsedTime();
         filePath = Environment.getExternalStorageDirectory().getPath();
-        replayFileName = "ReplayFile";
+        replayFileName = "QuarantineReplayFile.txt";
         initSubsystems();
     }
 
